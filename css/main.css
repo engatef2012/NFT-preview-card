@@ -1,0 +1,140 @@
+:root{
+    /* Primary */
+--Soft-blue: hsl(215, 51%, 70%);
+--Cyan: hsl(178, 100%, 50%);
+
+/* ### Neutral */
+ --Very-dark-blue-main: hsl(217, 54%, 11%);     /*(main BG) */
+ --Very-dark-blue-card : hsl(216, 50%, 16%);    /*(card BG) */
+--Very-dark-blue-line : hsl(215, 32%, 27%);     /*(line)*/
+}
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: var(--Very-dark-blue-main);
+}
+main{
+    width: 350px;
+    padding: 25px;
+    background-color: var(--Very-dark-blue-card);
+    border-radius: 20px;
+    /* box-shadow: 10px 10px 5px var(--Very-dark-blue-line),-10px 10px 5px var(--Very-dark-blue-line); */
+}
+main .equilibrium{
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+}
+main .equilibrium img:first-of-type{
+    max-width: 100%;
+}
+main .equilibrium .view{
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    transition: 0.3s;
+}
+main .equilibrium:hover .view{
+    display: block;
+}
+main .equilibrium::before{
+position: absolute;
+content: "";
+z-index: 1;
+background-color: var(--Cyan);
+opacity: 0.5;
+border-radius: 8px;
+width: 0;
+height: 0;
+top: calc(50% - 2.5px);
+left: 50%;
+transform: translate(-50%,-50%);
+transition: 0.3s;
+}
+main .equilibrium:hover::before{
+    width: 100%;
+    height: calc(100% - 5px);
+}
+main h1{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    cursor: pointer;
+    width: fit-content;
+}
+main h1:hover{
+    color: var(--Cyan);
+}
+main p{
+    color: var(--Soft-blue);
+    margin-bottom: 30px;    
+}
+main .details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--Soft-blue);
+}
+main .details .image{
+    display: flex;
+    align-items: center;
+}
+main .details .image img{
+    height: 20px;
+}
+main .details .image span{
+    color: var(--Cyan);
+    margin-left: 8px;
+}
+main .details .time{
+    color: var(--Soft-blue);
+    display: flex;
+    align-items: center;
+}
+main .details .time span{
+    margin-left: 8px;
+}
+main .creator{
+    display: flex;
+    align-items: center;
+}
+main .creator img{
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+main .creator div{
+color: var(--Soft-blue);
+}
+main .creator div span{
+    color: white;
+    cursor: pointer;
+}
+main .creator div span:hover{
+    color: var(--Cyan);
+}
+footer{
+    color: white;
+    font-size: 14px;
+}
+footer a{
+    text-decoration: none;
+    color: var(--Cyan);
+}
